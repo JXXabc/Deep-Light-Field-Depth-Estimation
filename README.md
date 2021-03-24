@@ -18,13 +18,13 @@ Requirements
 
 + test
 
-Download related DUT-LFDD dataset [**link**](https://pan.baidu.com/s/1vOM5KUSAGfzwrZwcwzoO8g) [ fetch code **tcw4** ] and the checkpoint file [**link**]( https://pan.baidu.com/s/1OPoTreAQDO8lhP_G_Gschw) [ fetch code **d3sv** ], and you need to set **--test_root** and checkpoint root correctly in ```test.py```. Meanwhile, you can to evaluate the results in ```eval.py```
-```                 
-python test.py, eval.py   
-```
+ Download related DUT-LFDD dataset [**link**](https://pan.baidu.com/s/1vOM5KUSAGfzwrZwcwzoO8g) [ fetch code **tcw4** ] and the checkpoint file [**link**]( https://pan.baidu.com/s/1OPoTreAQDO8lhP_G_Gschw) [ fetch code **d3sv** ], and you need to set **--test_root** and checkpoint root correctly in ```test.py```. Meanwhile, you can  to evaluate the results in ```eval.py```
+ ```                 
+ python test.py, eval.py   
+ ```
 + Train
 
-Our train-augment dataset [**link**](https://pan.baidu.com/s/1V8_wHSiZGVfDSXCLu5O2hw) [ fetch code **p4sj** ], and set the param '--test_root' correctly in ```train.py```. Meanwhile, you need to download the related file ```VGG16.pth``` [**link**](https://pan.baidu.com/s/1Nfymq7MJNZijpY8cZKFacg)[ fetch code **5xt9** ] and put it into the file ```model```.
+ Our train-augment dataset [**link**](https://pan.baidu.com/s/1V8_wHSiZGVfDSXCLu5O2hw) [ fetch code **p4sj** ], and set the param '--test_root' correctly in ```train.py```. Meanwhile, you need to download the related file ```VGG16.pth``` [**link**](https://pan.baidu.com/s/1Nfymq7MJNZijpY8cZKFacg)[ fetch code **5xt9** ] and put it into the file ```model```.
 ```
 python train.py
 ```
