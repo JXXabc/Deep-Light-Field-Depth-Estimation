@@ -7,19 +7,19 @@ from functions import imsave
 import dataset_loader
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--test_root', type=str, default='D:\dataset\our_transform\change/test', help='testing size')
+parser.add_argument('--test_root', type=str, default='', help='testing size')
 parser.add_argument('--testsize', type=int, default=256, help='testing size')
 opt = parser.parse_args()
 
 model = Depth_Net()
-model.load_state_dict(torch.load('D:\mycode\our_method\jxx_2.26\cpd_rfb+gru_change\checkpoint/54_w.pth'))
+model.load_state_dict(torch.load('./checkpoint/model.pth'))
 
 model.cuda()
 model.eval()
 
-save_rgb = './result_our_54/rgb/'
-if not os.path.exists(save_rgb):
-    os.makedirs(save_rgb)
+save_path = ''
+if not os.path.exists(save_path):
+    os.makedirs(save_path)
 test_loader = dataset_loader.getTestingData(opt.test_root, 1)
 
 with torch.no_grad():
@@ -32,4 +32,4 @@ with torch.no_grad():
         out = model(image,focal)
         pred = F.interpolate(out,[img_size[1],img_size[0]],mode = 'bilinear')
         pred = pred.view(img_size[1],img_size[0]).cpu().data
-        imsave(os.path.join(save_rgb, img_name[0] + '.png'), pred)
+        imsave(os.path.join(save_path, img_name[0] + '.png'), pred)
