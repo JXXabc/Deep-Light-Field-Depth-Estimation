@@ -16,8 +16,8 @@ Requirements
 
 ##Train/Test
 + test
-Download related DUT-LFDD dataset [**link**](https://pan.baidu.com/s/1vOM5KUSAGfzwrZwcwzoO8g) [ fetch code **tcw4** ] and the checkpoint file [**link**( https://pan.baidu.com/s/1OPoTreAQDO8lhP_G_Gschw) [ fetch code **d3sv** ], and you need to set **--test_root** and checkpoint root correctly in ```test.py```. Meanwhile, you can to evaluate the results in ```eval.py```
-```
+Download related DUT-LFDD dataset [**link**](https://pan.baidu.com/s/1vOM5KUSAGfzwrZwcwzoO8g) [ fetch code **tcw4** ] and the checkpoint file [**link**]( https://pan.baidu.com/s/1OPoTreAQDO8lhP_G_Gschw) [ fetch code **d3sv** ], and you need to set **--test_root** and checkpoint root correctly in ```test.py```. Meanwhile, you can to evaluate the results in ```eval.py```
+```                 
 python test.py, eval.py   
 ```
 + Train
