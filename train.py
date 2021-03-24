@@ -9,8 +9,8 @@ from utils import clip_gradient, adjust_lr
 import dataset_loader
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--train_root', type=str, default='D:\dataset\our_transform\change/train1/', help='epoch number')
-parser.add_argument('--epoch', type=int, default=55, help='epoch number')
+parser.add_argument('--train_root', type=str, default='', help='train dataset root')
+parser.add_argument('--epoch', type=int, default=50, help='epoch number')
 parser.add_argument('--lr', type=float, default=1e-4, help='learning rate')
 parser.add_argument('--batchsize', type=int, default=1, help='training batch size')
 parser.add_argument('--trainsize', type=int, default=256, help='training dataset size')
@@ -19,9 +19,6 @@ parser.add_argument('--decay_rate', type=float, default=0.3, help='decay rate of
 parser.add_argument('--decay_epoch', type=int, default=40, help='every n epochs decay learning rate')
 parser.add_argument('--param', type=str, default=True, help='path to pre-trained parameters')
 parser.add_argument('--start_epoch', default=0, type=int)
-parser.add_argument('--total_depth', type=int, default=10, help='total depth')
-parser.add_argument('--total_length', type=int,default=4, help='length of regions')
-parser.add_argument('--total_width', type=int,default=4, help='width of regions')
 parser.add_argument('--pre_train_mode', type=bool, default=False, help='pre_train_in_duts')
 opt = parser.parse_args()
 
@@ -52,7 +49,6 @@ class Sobel(nn.Module):
 def train(train_loader, model, optimizer, epoch):
     batch_time = AverageMeter()
     losses = AverageMeter()
-    totalNumber = 0
     model.train()
     end = time.time()
     for i, sample_batched in enumerate(train_loader, start=1):
@@ -94,7 +90,7 @@ def train(train_loader, model, optimizer, epoch):
               'Time {batch_time.val:.3f} ({batch_time.sum:.3f})\t'
               'Loss {loss.val:.4f} ({loss.avg:.4f})'
               .format(epoch, i, len(train_loader), batch_time=batch_time, loss=losses))
-    save_path = 'D:\mycode\our_method\jxx_2.26\cpd_rfb+gru_change\checkpoint/'
+    save_path = './checkpoint/'
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
