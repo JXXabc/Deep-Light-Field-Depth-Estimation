@@ -18,10 +18,13 @@ Requirements
 + test
 Download related dataset [**link**](https://github.com/jiwei0921/RGBD-SOD-datasets) and the checkpoint file [**link**](https://github.com/jiwei0921/RGBD-SOD-datasets), and you need to set **--test_root** and checkpoint root correctly in ```test.py```. Meanwhile, you can to evaluate the results in ```eval.py```
 ```
-python demo.py, eval.py   
+python test.py, eval.py   
 ```
 + Train
 Our train-augment dataset [**link**](https://pan.baidu.com/s/18nVAiOkTKczB_ZpIzBHA0A) [ fetch code **haxl** ], and set the param '--test_root' correctly in ```train.py```. Meanwhile, you need to download the related file ```VGG16.pth``` [**link**](https://github.com/jiwei0921/RGBD-SOD-datasets) and put it into the file ```model```.
+```
+python train.py
+```
 
 
 ### Contact Us
